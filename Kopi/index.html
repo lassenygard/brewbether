@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> | BrewBetter</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    !— link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"—!
+
+    <style>
+.countdown-container {
+  display: flex;
+  width: 100%;
+  max-width: 70%;
+  justify-content: space-between;
+}
+
+.days-container,
+.hours-container,
+.minutes-container,
+.seconds-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.1);
+  border: 5px solid rgba(255,255,255,0.3);
+  width: 140px;
+  height: 140px;
+  border-radius: 99px;
+
+}
+
+.days,
+.hours,
+.minutes,
+.seconds {
+  font-size: 2.5em;
+  margin: 10px 0;
+}
+
+.days-label,
+.hours-label,
+.minutes-label,
+.seconds-label {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 800px) {
+
+  .countdown-container {
+     max-width: 90%;
+  }
+
+  .days-container,
+  .hours-container,
+  .minutes-container,
+  .seconds-container {
+    font-size: 0.8em;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
+
+</style><script>
+
+      function create_table1 () {
+        var table = document.getElementById("table1");
+        var name1 = document.getElementById('name').value
+        var liter1 = document.getElementById('antall_liter').value
+        var mesketid1 = document.getElementById('tid_mesk').value
+        var koketid1 = document.getElementById('tid_kok').value
+
+        var row1 = table.insertRow(0);
+        var row2 = table.insertRow(1);
+        var row3 = table.insertRow(2);
+        var row4 = table.insertRow(3);
+
+        var cell1 = row1.insertCell(0);
+        var cell2 = row1.insertCell(1);
+        var cell3 = row2.insertCell(0);
+        var cell4 = row2.insertCell(1);
+        var cell5 = row3.insertCell(0);
+        var cell6 = row3.insertCell(1);
+        var cell7 = row4.insertCell(0);
+        var cell8 = row4.insertCell(1);
+
+        cell1.innerHTML = "Navn";
+        cell2.innerHTML = name1;
+        cell3.innerHTML = "Antall liter";
+        cell4.innerHTML = liter1;
+        cell5.innerHTML = "Mesketid";
+        cell6.innerHTML = mesketid1;
+        cell7.innerHTML = "Koketid";
+        cell8.innerHTML = koketid1;
+
+      }
+
+
+// Hide form
+      function hide_step1 () {
+        document.getElementById('step1').style.display = "none";
+      }
+
+
+// Show start button for start countdown mesketid
+      function show_startmesk_button () {
+        document.getElementById('startmesk_button').style.display = "block";
+      }
+
+// Endre verdi til mesketid i tid_value
+    function setvalue_tidmesk () {
+      var tid = document.getElementById('tid_mesk');
+      var tid2 = document.getElementById('count_tid');
+
+      tid2.innerHTML = tid.value;
+    }
+
+
+// Hide start button for countdown mesk
+      function hidestartmesk_button () {
+        document.getElementById('startmesk_button').style.display = "none";
+      }
+
+
+// Show start button for start countdown koketid
+      function showstartkok_button () {
+        document.getElementById('startkok_button').style.display = "block";
+      }
+
+// Endre verdi til kokketid i tid_value
+ //   function setvalue_tidkok () {
+ //     var tid = document.getElementById('tid_kok');
+ //     var tid2 = document.getElementById('count_tid');
+
+ //     tid2.innerHTML = tid.value;
+ //   }
+
+// Hide start button for countdown kok
+     function hidestartkok_button () {
+        document.getElementById('startkok_button').style.display = "none";
+      }
+
+const countDownClock = (number = 100, format = 'seconds') => {
+
+  const d = document;
+  const daysElement = d.querySelector('.days');
+  const hoursElement = d.querySelector('.hours');
+  const minutesElement = d.querySelector('.minutes');
+  const secondsElement = d.querySelector('.seconds');
+  let countdown;
+  convertFormat(format);
+
+
+  function convertFormat(format) {
+    switch(format) {
+      case 'seconds':
+        return timer(number);
+      case 'minutes':
+        return timer(number * 60);
+        case 'hours':
+        return timer(number * 60 * 60);
+      case 'days':
+        return timer(number * 60 * 60 * 24);;
+    }
+  }
+
+  function timer(seconds) {
+    const now = Date.now();
+    const then = now + seconds * 1000;
+
+    countdown = setInterval(() => {
+      const secondsLeft = Math.round((then - Date.now()) / 1000);
+
+      if(secondsLeft <= 0) {
+        clearInterval(countdown);
+        return;
+      };
+
+      displayTimeLeft(secondsLeft);
+
+    },1000);
+  }
+
+  function displayTimeLeft(seconds) {
+    daysElement.textContent = Math.floor(seconds / 86400);
+    hoursElement.textContent = Math.floor((seconds % 86400) / 3600);
+    minutesElement.textContent = Math.floor((seconds % 86400) % 3600 / 60);
+    secondsElement.textContent = seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60;
+  }
+}
+
+
+/*
+  start countdown
+  enter number and format
+  days, hours, minutes or seconds
+*/
+countDownClock(20, 'days');
+
+
+    </script>
+
+
+    </head>
+    <body>
+
+
+
+
+
+    <div class="container">
+        <h2 id="headline">Nytt Brygg</h2>
+       <form class="form-group" id="step1">
+
+          <div>
+            <label>Navn:</label>
+            <input class="form-control" type="text" name="bryggenavn" id="name" required>
+          </div>
+
+          <div>
+            <label>Antall liter:</label>
+            <input class="form-control" type="text" name="antall_liter" id="antall_liter" required>
+          </div>
+
+          <div>
+            <label>Velg mesketid:</label>
+            <input class="form-control" type="text" name="tid_mesk" id="tid_mesk" required>
+          </div>
+
+          <div>
+            <label>Velg koketid:</label>
+            <input class="form-control" type="text" name="tid_kok" id="tid_kok" required>
+          </div>
+
+          <p>
+          <div class="button">
+            <button type="button" class="btn btn-default" onclick="create_table1 ();hide_step1 (); show_startmesk_button ();">Neste</button>
+          </div>
+          </p>
+      </form>
+
+      <table class="table table-condensed" id="table1"></table>
+
+
+      <textarea type="text" name="count_tid" id="count_tid"></textarea>
+
+
+
+      <div style="display:none" class="button" id="startmesk_button">
+        <button type="button" class="btn btn-default" onclick="setvalue_tidmesk(); hidestartmesk_button (); showstartkok_button (); startmesk ();">Start mesketid</button>
+      </div>
+
+      <div style="display:none" class="button" id="startkok_button">
+        <button type="button" class="btn btn-default" onclick="hidestartkok_button (); startmesk ();">Start koketid</button>
+      </div>
+
+<section class="countdown-container">
+
+  <div class="days-container">
+    <div class="days"></div>
+    <div class="days-label">days</div>
+  </div>
+
+  <div class="hours-container">
+    <div class="hours"></div>
+    <div class="hours-label">hours</div>
+  </div>
+
+  <div class="minutes-container">
+    <div class="minutes"></div>
+<div class="minutes-label">minutes</div>
+  </div>
+
+  <div class="seconds-container">
+    <div class="seconds"></div>
+    <div class="seconds-label">seconds</div>
+  </div>
+
+</section>
+
+
+
+    </body>
+  </head>
+</html>

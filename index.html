@@ -1,0 +1,174 @@
+<html>
+  <head>
+    <title> | BestBrew</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css">
+    <script>
+
+      function create_table1 () {
+        var table = document.getElementById("table1");
+        var name1 = document.getElementById('name').value
+        var liter1 = document.getElementById('antall_liter').value
+        var mesketid1 = document.getElementById('tid_mesk').value
+        var koketid1 = document.getElementById('tid_kok').value
+
+        var row1 = table.insertRow(0);
+        var row2 = table.insertRow(1);
+        var row3 = table.insertRow(2);
+        var row4 = table.insertRow(3);
+
+        var cell1 = row1.insertCell(0);
+        var cell2 = row1.insertCell(1);
+        var cell3 = row2.insertCell(0);
+        var cell4 = row2.insertCell(1);
+        var cell5 = row3.insertCell(0);
+        var cell6 = row3.insertCell(1);
+        var cell7 = row4.insertCell(0);
+        var cell8 = row4.insertCell(1);
+
+        cell1.innerHTML = "Navn";
+        cell2.innerHTML = name1;
+        cell3.innerHTML = "Antall liter";
+        cell4.innerHTML = liter1;
+        cell5.innerHTML = "Mesketid";
+        cell6.innerHTML = mesketid1;
+        cell7.innerHTML = "Koketid";
+        cell8.innerHTML = koketid1;
+
+      }
+
+
+      function write_step1 () {
+        var name_out = document.getElementById('name_out')
+        var liter_out = document.getElementById('liter_out')
+        var name = document.getElementById('name')
+        var liter = document.getElementById('antall_liter')
+        var tid_mesk_out = document.getElementById('tid_mesk_out')
+        var tid_kok_out = document.getElementById('tid_kok_out')
+        var mesk = document.getElementById('tid_mesk')
+        var kok = document.getElementById('tid_kok')
+
+        name_out.innerHTML = name.value
+        liter_out.innerHTML = antall_liter.value
+
+        tid_kok_out.innerHTML = kok.value
+        tid_mesk_out.innerHTML = mesk.value
+      }
+
+// Hide form
+      function hide_step1 () {
+        document.getElementById('step1').style.display = "none";
+      }
+
+// Show start button for start countdown mesketid
+      function show_startmesk_button () {
+        document.getElementById('startmesk_button').style.display = "block";
+      }
+
+// Start countdown by pressing button "Start mesketid"
+  //    function start_countdown_mesk () {
+  //      document.getElementById('countdown').style.display = "block";
+  //    }
+
+// Hide start button for countdown mesk
+      function hidestartmesk_button () {
+        document.getElementById('startmesk_button').style.display = "none";
+      }
+
+
+    </script>
+  <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="jquery.countdown360.js" type="text/javascript" charset="utf-8"></script> -->
+    <script src="index.js"></script>
+    </head>
+    <body>
+
+
+          <div class="container">
+              <h2 id="headline">Nytt Brygg</h2>
+             <form class="form-group" id="step1">
+
+                <div>
+                  <label>Navn:</label>
+                  <input class="form-control" type="text" name="bryggenavn" id="name" required>
+                </div>
+
+                <div>
+                  <label>Antall liter:</label>
+                  <input class="form-control" type="text" name="antall_liter" id="antall_liter" required>
+                </div>
+
+                <div>
+                  <label>Velg mesketid:</label>
+                  <input class="form-control" type="text" name="tid_mesk" id="tid_mesk" required>
+                </div>
+
+                <div>
+                  <label>Velg koketid:</label>
+                  <input class="form-control" type="text" name="tid_kok" id="tid_kok" required>
+                </div>
+
+                <p>
+                <div class="button">
+                  <button type="button" class="btn btn-default" onclick="create_table1 ();hide_step1 (); show_startmesk_button ();">Neste</button>
+                </div>
+                </p>
+            </form>
+
+            <table class="table table-condensed" id="table1"></table>
+
+<p>
+
+      <div style="display:none" class="button" id="startmesk_button">
+        <button type="button" onclick="countDownClock (); hidestartmesk_button ();">Start mesketid</button>
+      </div>
+
+      <!-- <div align="center" id="container">
+  			<div id="countdown"></div>
+  			<script type="text/javascript" charset="utf-8">
+        function start () {
+        var sec = document.getElementById('tid_mesk').value
+  		 	var countdown =  $("#countdown").countdown360({
+         	 	radius      : 100,
+           	seconds     : sec,
+           	fontColor   : '#000000',
+           	autostart   : false,
+           	onComplete  : function ()
+          });
+  			countdown.start();
+  			console.log('countdown360 ',countdown);
+  		 	$(document).on("false_click","button",function(e){
+  		 		e.preventDefault();
+  		 		var type = $(this).attr("data-type");
+  		 		if(type === "time-remaining")
+  		 		{
+  		 			var timeRemaining = countdown.getTimeRemaining();
+  		 			alert(timeRemaining);
+  		 		}
+  		 		else
+  		 		{
+  		 			var timeElapsed = countdown.getElapsedTime();
+  		 			alert(timeElapsed);
+  		 		}
+  		 	});
+
+        }
+  		  </script>
+  		</div> -->
+
+        <section class="countdown-container">
+        <div class="minutes-container">
+          <div class="minutes"></div>
+          <div class="minutes-label">minutes</div>
+        </div>
+      </section>
+
+
+
+
+
+
+
+    </body>
+  </head>
+</html>
