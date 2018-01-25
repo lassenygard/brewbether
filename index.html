@@ -1,7 +1,8 @@
 <html>
   <head>
     <title> | BestBrew</title>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css">
     <script>
 
@@ -79,33 +80,29 @@
     </script>
   <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 		<script src="jquery.countdown360.js" type="text/javascript" charset="utf-8"></script> -->
-    <script src="index.js"></script>
+    <script src="bootstrap/js/index.js"></script>
     </head>
     <body>
 
 
-          <div class="container">
+          <div class="row-fluid">
               <h2 id="headline">Nytt Brygg</h2>
              <form class="form-group" id="step1">
 
                 <div>
-                  <label>Navn:</label>
-                  <input class="form-control" type="text" name="bryggenavn" id="name" required>
+                  <input class="span" name="bryggenavn" id="name" value="Navn p&aring; brygget..." onfocus="this.value='';">
                 </div>
 
                 <div>
-                  <label>Antall liter:</label>
-                  <input class="form-control" type="text" name="antall_liter" id="antall_liter" required>
+                  <input class="span" name="antall_liter" id="antall_liter" value="25 / 50 / 75 etc..." onfocus="this.value=''">
                 </div>
 
                 <div>
-                  <label>Velg mesketid:</label>
-                  <input class="form-control" type="text" name="tid_mesk" id="tid_mesk" required>
+                  <input class="span" name="tid_mesk" id="tid_mesk" value="Mesketid i min..." onfocus="this.value='';">
                 </div>
 
                 <div>
-                  <label>Velg koketid:</label>
-                  <input class="form-control" type="text" name="tid_kok" id="tid_kok" required>
+                  <input class="span" name="tid_kok" id="tid_kok" value="Koketid i min..." onfocus="this.value='';">
                 </div>
 
                 <p>
@@ -121,7 +118,7 @@
 
       <div style="display:none" class="button" id="startmesk_button">
         <button type="button" onclick="countDownClock (); hidestartmesk_button ();">Start mesketid</button>
-        <button type="button" onclick="countDownClock (); hidestartmesk_button ();">Start mesketid</button>
+
       </div>
 
       <!-- <div align="center" id="container">
@@ -157,11 +154,19 @@
   		  </script>
   		</div> -->
 
-        <section class="countdown-container">
+      <section class="countdown-container">
+
+
         <div class="minutes-container">
           <div class="minutes"></div>
-          <div class="minutes-label">minutes</div>
+      <div class="minutes-label">minutter</div>
         </div>
+
+        <div class="seconds-container">
+          <div class="seconds"></div>
+          <div class="seconds-label">sekunder</div>
+        </div>
+
       </section>
 
 

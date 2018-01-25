@@ -9,16 +9,6 @@
 	],
 "creatorBuild": "26148",
 "files": {
-	"\/ajax.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/ajax-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
 	"\/bootstrap\/css\/bootstrap-min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -111,12 +101,42 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/bootstrap\/js\/index-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/bootstrap\/js\/index-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bootstrap\/js\/index.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/bootstrap\/js\/index-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/bootstrap\/js\/nedteller.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/bootstrap\/js\/nedteller-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/form-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/form-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -138,22 +158,12 @@
 		"oAP": "\/index.html",
 		"oF": 0
 		},
-	"\/jquery.countdown360-min.js": {
+	"\/Kladder\/js\/squashsquad.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/jquery.countdown360-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"\/jquery.countdown360.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/jquery.countdown360-min.js",
+		"oAP": "\/Kladder\/js\/squashsquad-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -171,26 +181,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/Kopi\/jquery.countdown360-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"\/table_1-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/table_1-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"\/table_1.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/table_1-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0

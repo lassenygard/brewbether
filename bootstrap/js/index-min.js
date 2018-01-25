@@ -1,0 +1,1 @@
+function countDownClock(){function n(){return t(60*o)}function t(n){var t=Date.now(),o=t+1e3*n;a=setInterval(function(){var n=Math.round((o-Date.now())/1e3);if(n<=0)return clearInterval(a),void alert("dddd");e(n)},1e3)}function e(n){u.textContent=Math.floor(n/60)}var o=document.getElementById("tid_mesk").innerHTML,r=document,u=r.querySelector(".minutes"),a=void 0;n()}

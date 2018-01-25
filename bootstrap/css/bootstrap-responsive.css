@@ -18,9 +18,8 @@
    -webkit-box-align: center;
        -ms-flex-align: center;
            align-items: center;
-   font-size: 12px;
-   background: black no-repeat center center / cover;
-   color: white;
+   background: #FFFFFF no-repeat center center / cover;
+   color: #000000;
  }
 
  .countdown-container {
@@ -28,14 +27,12 @@
    display: -ms-flexbox;
    display: flex;
    width: 100%;
-   max-width: 70%;
+   max-width: 100%;
    -webkit-box-pack: justify;
        -ms-flex-pack: justify;
            justify-content: space-between;
  }
 
- .days-container,
- .hours-container,
  .minutes-container,
  .seconds-container {
    display: -webkit-box;
@@ -51,38 +48,31 @@
    -webkit-box-pack: center;
        -ms-flex-pack: center;
            justify-content: center;
-   background-color: rgba(0,0,0,0.1);
-   border: 5px solid rgba(255,255,255,0.3);
-   width: 140px;
-   height: 140px;
+   background-color: #FFFFFF;
+   border: 4px solid #000000;
+   width: 150px;
+   height: 150px;
    border-radius: 99px;
  }
 
- .days,
- .hours,
  .minutes,
  .seconds {
    font-size: 2.5em;
    margin: 10px 0;
  }
 
-
- .days-label,
- .hours-label,
  .minutes-label,
  .seconds-label {
    text-transform: uppercase;
-   margin-bottom: 5px;
+   margin-bottom: 2px;
  }
 
- @media (max-width: 800px) {
+ @media (max-width: 250px) {
 
    .countdown-container {
      max-width: 90%;
    }
 
-   .days-container,
-   .hours-container,
    .minutes-container,
    .seconds-container {
      font-size: 0.8em;
@@ -163,6 +153,8 @@
   }
 }
 
+
+
 @media (max-width: 767px) {
   .hidden-desktop {
     display: inherit !important;
@@ -181,6 +173,8 @@
 .visible-print {
   display: none !important;
 }
+
+
 
 @media print {
   .visible-print {
@@ -299,7 +293,7 @@
     content: "";
   }
   .row-fluid:after {
-    clear: both;
+    clear: block;
   }
   .row-fluid [class*="span"] {
     display: block;
@@ -315,6 +309,7 @@
   .row-fluid [class*="span"]:first-child {
     margin-left: 0;
   }
+
   .row-fluid .controls-row [class*="span"] + [class*="span"] {
     margin-left: 2.564102564102564%;
   }
@@ -555,11 +550,12 @@
   .row:after {
     clear: both;
   }
+
   [class*="span"] {
     float: left;
     min-height: 1px;
-    margin-left: 20px;
   }
+
   .container,
   .navbar-static-top .container,
   .navbar-fixed-top .container,
@@ -638,10 +634,11 @@
   .offset1 {
     margin-left: 82px;
   }
+
   .row-fluid {
-    width: 100%;
-    *zoom: 1;
+      width: 50%;
   }
+
   .row-fluid:before,
   .row-fluid:after {
     display: table;
@@ -651,19 +648,21 @@
   .row-fluid:after {
     clear: both;
   }
+
   .row-fluid [class*="span"] {
     display: block;
     float: left;
     width: 100%;
     min-height: 30px;
-    margin-left: 2.7624309392265194%;
+
     *margin-left: 2.709239449864817%;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
   .row-fluid [class*="span"]:first-child {
-    margin-left: 0;
+    width: 100%;
+    margin-bottom: 15;
   }
   .row-fluid .controls-row [class*="span"] + [class*="span"] {
     margin-left: 2.7624309392265194%;
@@ -908,9 +907,11 @@
   .container {
     width: auto;
   }
+
   .row-fluid {
     width: 100%;
   }
+
   .row,
   .thumbnails {
     margin-left: 0;
@@ -923,9 +924,11 @@
   .uneditable-input[class*="span"],
   .row-fluid [class*="span"] {
     display: block;
-    float: none;
+    float: left;
     width: 100%;
-    margin-left: 0;
+    min-height: 30px;
+
+    *margin-left: 2.709239449864817%;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
@@ -1184,9 +1187,28 @@
   }
 }
 
+
+
 @media (min-width: 980px) {
   .nav-collapse.collapse {
     height: auto !important;
     overflow: visible !important;
   }
+}
+
+.row-fluid {
+  width: 100%;
+}
+
+
+.row-fluid [class*="span"] {
+  display: block;
+  float: left;
+  width: 100%;
+  min-height: 30px;
+
+  *margin-left: 2.709239449864817%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
