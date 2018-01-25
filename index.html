@@ -66,16 +66,12 @@
         document.getElementById('startmesk_button').style.display = "block";
       }
 
-// Start countdown by pressing button "Start mesketid"
-  //    function start_countdown_mesk () {
-  //      document.getElementById('countdown').style.display = "block";
-  //    }
 
-// Hide start button for countdown mesk
-      function hidestartmesk_button () {
-        document.getElementById('startmesk_button').style.display = "none";
+
+// Hide start button for countdown kok
+      function hidestartkok_button () {
+        document.getElementById('startkok_button').style.display = "none";
       }
-
 
     </script>
   <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -86,8 +82,8 @@
 
 
           <div class="row-fluid">
-              <h2 id="headline">Nytt Brygg</h2>
-             <form class="form-group" id="step1">
+              <h2 align="center" id="headline">Brew Better</h2>
+             <form id="step1">
 
                 <div>
                   <input class="span" name="bryggenavn" id="name" value="Navn p&aring; brygget..." onfocus="this.value='';">
@@ -102,59 +98,30 @@
                 </div>
 
                 <div>
-                  <input class="span" name="tid_kok" id="tid_kok" value="Koketid i min..." onfocus="this.value='';">
+                  <input style="margin-bottom:50" class="span" name="tid_kok" id="tid_kok" value="Koketid i min..." onfocus="this.value='';">
                 </div>
 
-                <p>
-                <div class="button">
-                  <button type="button" class="btn btn-default" onclick="create_table1 ();hide_step1 (); show_startmesk_button ();">Neste</button>
+
+                <div align="center">
+                  <button type="button" class="btn-large" onclick="create_table1 ();hide_step1 (); show_startmesk_button ();">Neste</button>
                 </div>
-                </p>
             </form>
 
-            <table class="table table-condensed" id="table1"></table>
+            <table style="margin-bottom:50" class="table" id="table1"></table>
 
-<p>
 
-      <div style="display:none" class="button" id="startmesk_button">
-        <button type="button" onclick="countDownClock (); hidestartmesk_button ();">Start mesketid</button>
 
+      <div align="center" style="display:none" class="button" id="startmesk_button">
+        <button type="button" class="btn-large" onclick="countDownClock ();">Start mesketid</button>
       </div>
 
-      <!-- <div align="center" id="container">
-  			<div id="countdown"></div>
-  			<script type="text/javascript" charset="utf-8">
-        function start () {
-        var sec = document.getElementById('tid_mesk').value
-  		 	var countdown =  $("#countdown").countdown360({
-         	 	radius      : 100,
-           	seconds     : sec,
-           	fontColor   : '#000000',
-           	autostart   : false,
-           	onComplete  : function ()
-          });
-  			countdown.start();
-  			console.log('countdown360 ',countdown);
-  		 	$(document).on("false_click","button",function(e){
-  		 		e.preventDefault();
-  		 		var type = $(this).attr("data-type");
-  		 		if(type === "time-remaining")
-  		 		{
-  		 			var timeRemaining = countdown.getTimeRemaining();
-  		 			alert(timeRemaining);
-  		 		}
-  		 		else
-  		 		{
-  		 			var timeElapsed = countdown.getElapsedTime();
-  		 			alert(timeElapsed);
-  		 		}
-  		 	});
+      <div align="center" style="display:none" class="button" id="startkok_button">
+        <button type="button" class="btn-large" onclick="countDownClock (); hidestartkok_button ();">Start koketid</button>
+      </div>
 
-        }
-  		  </script>
-  		</div> -->
 
-      <section class="countdown-container">
+<p />
+      <section style="margin-top:50"class="countdown-container">
 
 
         <div class="minutes-container">
